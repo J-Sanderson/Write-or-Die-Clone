@@ -1,0 +1,21 @@
+.hidden {
+  display: none;
+}
+
+/* timing out on text area  - temp colours */
+
+.warning-none {
+  background-color: white;
+}
+
+.warning-first {
+  background-color: pink;
+}
+
+.warning-second {
+  background-color: hotpink;
+}
+
+.warning-final {
+  background-color: red;
+}

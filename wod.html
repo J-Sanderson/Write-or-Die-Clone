@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Write or Die Clone</title>
+<link rel="stylesheet" type="text/css" href="wod.css" media="screen" />
+<script  type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script  type="text/javascript" src="wod.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="fullscreen" id="start-screen">
+  
+  <h1>JSanderson's Write or Die Clone</h1>
+  
+  <p>A clone of the old webapp version of <a href="https://writeordie.com/">DrWicked's Write Or Die</a>, for those who liked it. Write things, or there will be consequences.</p>
+
+  <p>Pick your settings:</p>
+
+  <form id="settings">
+
+    <label for="mode">Mode:</label><br />
+    <input type="radio" name="mode" value="gentle" checked/>
+      Gentle - write or you will receive a reminder to keep writing.
+    <br />
+    <input type="radio" name="mode" value="intermediate" />
+      Intermediate - write or annoying sounds will play.
+    <br />
+    <input type="radio" name="mode" value="kamikaze" />
+      Kamikaze - write or your work will delete itself!
+    <br /><br />
+
+    <label for="time">
+      Time (mins) - enter how long you want to write for. WARNING: there is currently no pause or stop function!
+    </label><br />
+    <input type="number" name="time" value="15" /><br /><br />
+
+    <label for="grace">Grace period (seconds, min 1, max 20) - how long you can not write before the consequences kick in.</label><br />
+    <input type="number" name="grace" min="1" max="20" value="10" /><br />
+    
+    <p>WARNING: this page does not save your words. If you want to keep them, copy-paste them somewhere safe when you're done.</p>
+
+    <input type="submit" value="Get writing!">
+
+  </form>
+
+</div>
+
+<div class="hidden" id="writing-screen">
+  <p>Get writing!</p>
+  <div class="counter" id='time-remaining'>
+  </div>
+  <textarea id="livetext" rows=10 cols=90 class="onehundred"></textarea>
+  <div class="counter" id='wordcount'>
+    0
+  </div>
+</div>
+
+</body>
+</html>
