@@ -2,17 +2,11 @@ var keyupTimer = 0;
 var mode;
 var grace;
 var sounds = {
-  //http://soundbible.com/557-Baby-Crying.html
   baby: new Audio("http://soundbible.com/grab.php?id=557&type=mp3"),
-  //http://soundbible.com/2085-Annoying-Speaker-Pulsing.html
   speaker: new Audio("http://soundbible.com/grab.php?id=2085&type=mp3"),
-  //http://soundbible.com/1811-Annoying-Alien-Buzzer.html
   buzzer: new Audio("http://soundbible.com/grab.php?id=1811&type=mp3"),
-  //http://soundbible.com/1591-Mosquito-Ringtone.html
   mosquito: new Audio("http://soundbible.com/grab.php?id=1591&type=mp3"),
-  //http://soundbible.com/1787-Annoying-Alarm-Clock.html
   alarm: new Audio("http://soundbible.com/grab.php?id=1787&type=mp3"),
-  //http://soundbible.com/527-Bagpipes.html
   bagpipes: new Audio("http://soundbible.com/grab.php?id=527&type=mp3"),
 }
 var sound;
@@ -35,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
     //display writing screen
     document.getElementById("start-screen").classList.add("hidden");
     document.getElementById("writing-screen").classList.remove("hidden");
+    document.getElementById("credit-container").classList.add("hidden");
 
     //set running status
     var running = true;
@@ -132,6 +127,14 @@ document.addEventListener("DOMContentLoaded", function() {
     words.pop();
     document.getElementById("livetext").value = words.join(" ");
   }
+  
+  //credits show/hide
+  document.getElementById("credit-button").addEventListener("click", function() {
+    document.getElementById("credits").classList.remove("hidden");
+  });
+  document.getElementById("close-credits").addEventListener("click", function() {
+    document.getElementById("credits").classList.add("hidden");
+  });
   
 });
 

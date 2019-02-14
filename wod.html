@@ -10,24 +10,23 @@
 <body>
 
 <div class="fullscreen" id="start-screen">
-  
+
   <h1>JSanderson's Write or Die Clone</h1>
-  
+
   <p>A clone of the old webapp version of <a href="https://writeordie.com/">DrWicked's Write Or Die</a>, for those who liked it. Write things, or there will be consequences.</p>
+
+  <hr>
 
   <p>Pick your settings:</p>
 
   <form id="settings">
 
     <label for="mode">Mode:</label><br />
-    <input type="radio" name="mode" value="gentle" checked/>
-      Gentle - write or you will receive a reminder to keep writing.
+    <input type="radio" name="mode" value="gentle" checked/> Gentle - write or you will receive a reminder to keep writing.
     <br />
-    <input type="radio" name="mode" value="intermediate" />
-      Intermediate - write or annoying sounds will play.
+    <input type="radio" name="mode" value="intermediate" /> Intermediate - write or annoying sounds will play.
     <br />
-    <input type="radio" name="mode" value="kamikaze" />
-      Kamikaze - write or your work will delete itself!
+    <input type="radio" name="mode" value="kamikaze" /> Kamikaze - write or your work will delete itself!
     <br /><br />
 
     <label for="time">
@@ -37,7 +36,7 @@
 
     <label for="grace">Grace period (seconds, min 1, max 20) - how long you can not write before the consequences kick in.</label><br />
     <input type="number" name="grace" min="1" max="20" value="10" /><br />
-    
+
     <p>WARNING: this page does not save your words. If you want to keep them, copy-paste them somewhere safe when you're done.</p>
 
     <input type="submit" value="Get writing!">
@@ -54,6 +53,45 @@
   <div class="counter" id='wordcount'>
     0
   </div>
+</div>
+
+<div id="credit-container">
+
+  <hr>
+
+  <button id="credit-button">
+    Credits
+  </button>
+
+  <div class="hidden" id="credits">
+    <h2>Sound credits</h2>
+
+    <ul>
+      <li>
+        <a href="http://soundbible.com/557-Baby-Crying.html">Baby Crying</a> by Mike Koenig
+      </li>
+      <li>
+        <a href="http://soundbible.com/2085-Annoying-Speaker-Pulsing.html">Annoying Speaker Pulsing</a> by Ethan Buck
+      </li>
+      <li>
+        <a href="http://soundbible.com/1811-Annoying-Alien-Buzzer.html">Annoying Alien Buzzer</a> by Kevan
+      </li>
+      <li>
+        <a href="http://soundbible.com/1591-Mosquito-Ringtone.html">Mosquito Ringtone</a> by KevanGC
+      </li>
+      <li>
+        <a href="http://soundbible.com/1787-Annoying-Alarm-Clock.html">Annoying Alarm Clock</a> by UncleKornicob
+      </li>
+      <li>
+        <a href="http://soundbible.com/527-Bagpipes.html">Bagpipes</a> by hellcreature
+      </li>
+    </ul>
+
+    <button id="close-credits">
+      Close
+    </button>
+  </div>
+
 </div>
 
 </body>
