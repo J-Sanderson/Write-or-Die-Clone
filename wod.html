@@ -9,61 +9,19 @@
 </head>
 <body>
 
-<div class="fullscreen" id="start-screen">
+<div id="overlay" class="hidden"></div>
 
-  <h1>JSanderson's Write or Die Clone</h1>
-
-  <p>A clone of the old webapp version of <a href="https://writeordie.com/">DrWicked's Write Or Die</a>, for those who liked it. Write things, or there will be consequences.</p>
-
-  <hr>
-
-  <p>Pick your settings:</p>
-
-  <form id="settings">
-
-    <label for="mode">Mode:</label><br />
-    <input type="radio" name="mode" value="gentle" checked/> Gentle - write or you will receive a reminder to keep writing.
-    <br />
-    <input type="radio" name="mode" value="intermediate" /> Intermediate - write or annoying sounds will play.
-    <br />
-    <input type="radio" name="mode" value="kamikaze" /> Kamikaze - write or your work will delete itself!
-    <br /><br />
-
-    <label for="time">
-      Time (mins) - enter how long you want to write for. WARNING: there is currently no pause or stop function!
-    </label><br />
-    <input type="number" name="time" value="15" /><br /><br />
-
-    <label for="grace">Grace period (seconds, min 1, max 20) - how long you can not write before the consequences kick in.</label><br />
-    <input type="number" name="grace" min="1" max="20" value="10" /><br />
-
-    <p>WARNING: this page does not save your words. If you want to keep them, copy-paste them somewhere safe when you're done.</p>
-
-    <input type="submit" value="Get writing!">
-
-  </form>
-
+<div class="hidden" id="timeup-screen">
+  <h2>Time's up!</h2>
+  <p>Close this box to return to your words. Make sure to keep them safe by copy-pasting them somewhere before you leave this page. <strong>This page does not save your words</strong> so don't lose them. Click "Close" to return to your work.</p>
+  <button id="written">
+      Close
+    </button>
 </div>
 
-<div class="hidden" id="writing-screen">
-  <p>Get writing!</p>
-  <div class="counter" id='time-remaining'>
-  </div>
-  <textarea id="livetext" rows=10 cols=90 class="onehundred"></textarea>
-  <div class="counter" id='wordcount'>
-    0
-  </div>
-</div>
+<div class="hidden" id="credits">
+    <p>This page would not be possible without Drwicked's original Write or Die. If you like it, consider buying his <a href="https://writeordie.com/">desktop app</a>.</p>
 
-<div id="credit-container">
-
-  <hr>
-
-  <button id="credit-button">
-    Credits
-  </button>
-
-  <div class="hidden" id="credits">
     <h2>Sound credits</h2>
 
     <ul>
@@ -88,10 +46,69 @@
     </ul>
 
     <button id="close-credits">
-      Close
-    </button>
+    Close
+  </button>
   </div>
 
+<div class="fullscreen" id="start-screen">
+
+  <h1>JSanderson's Write or Die Clone</h1>
+
+  <p>A clone of the old webapp version of <a href="https://writeordie.com/">DrWicked's Write Or Die</a>, for those who liked it. Write things, or there will be consequences.</p>
+
+  <p>Note: The pause button will work once and only once! Don't misuse it!</p>
+
+  <hr>
+
+  <p>Pick your settings:</p>
+
+  <form id="settings">
+
+    <label for="mode">Mode:</label><br />
+    <input type="radio" name="mode" value="gentle" checked/> Gentle - write or you will receive a reminder to keep writing.
+    <br />
+    <input type="radio" name="mode" value="intermediate" /> Intermediate - write or annoying sounds will play.
+    <br />
+    <input type="radio" name="mode" value="kamikaze" /> Kamikaze - write or your work will delete itself!
+    <br /><br />
+
+    <label for="time">
+      Time (mins) - enter how long you want to write for.
+    </label><br />
+    <input type="number" name="time" value="15" /><br /><br />
+
+    <label for="grace">Grace period (seconds, min 1, max 20) - how long you can not write before the consequences kick in.</label><br />
+    <input type="number" name="grace" min="1" max="20" value="10" /><br />
+
+    <p>WARNING: this page does not save your words. If you want to keep them, copy-paste them somewhere safe when you're done.</p>
+
+    <input type="submit" value="Get writing!">
+
+  </form>
+
+</div>
+
+<div class="hidden" id="writing-screen">
+  <p>Get writing!</p>
+  <div class="counter" id='time-remaining'>
+  </div>
+  <textarea id="livetext" rows=10 cols=90 class="onehundred"></textarea>
+  <div class="counter" id='wordcount'>
+    0
+  </div>
+  <button id="pause">
+    Pause (works ONCE only!)
+  </button>
+</div>
+
+<div id="credit-container">
+
+  <hr>
+
+  <button id="credit-button">
+  Credits
+</button>
+  
 </div>
 
 </body>
