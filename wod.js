@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
     //display writing screen
     document.getElementById("start-screen").classList.add("hidden");
     document.getElementById("writing-screen").classList.remove("hidden");
+    document.getElementById("livetext").classList.add("warning-none");
     document.getElementById("credit-container").classList.add("hidden");
 
     //set running status

@@ -1,3 +1,41 @@
+:root {
+  --background: #181F2C;
+  --text: #A9B1C0;
+  --link: #5570A2;
+  --box-background: #E4F1FB;
+  --shadow: #000000;
+  --warning-first: #F88F8F;
+  --warning-second: #D25353;
+  --warning-final: #FF1C1C;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: "Open Sans", sans-serif;
+  padding: 0px 20px;
+}
+
+a {
+  color: var(--link);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--text);
+  margin: 20px 0;
+}
+
+button, input[type="submit"] {
+  background-color: var(--link);
+  border: 0;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+}
+
 .hidden {
   display: none;
 }
@@ -17,29 +55,44 @@
 }
 
 #credits, #timeup-screen {
-  background-color: white;
+  background-color: var(--box-background);
+  color: var(--background);
   position: fixed;
   width: 60%;
   left: 50%;
   margin-left: -30%;
   padding: 10px;
   z-index: 20;
+  box-shadow: 0px 5px 5px var(--shadow);
+  border-radius: 5px;
+}
+
+#writing-screen {
+  text-align: center;
+}
+
+.counter {
+  margin: 10px;
+}
+
+#livetext {
+  border: 1px solid var(--shadow);
 }
 
 /* timing out on text area  - temp colours */
 
 .warning-none {
-  background-color: white;
+  background-color: var(--box-background);
 }
 
 .warning-first {
-  background-color: pink;
+  background-color: var(--warning-first);
 }
 
 .warning-second {
-  background-color: hotpink;
+  background-color: var(--warning-second);
 }
 
 .warning-final {
-  background-color: red;
+  background-color: var(--warning-final);
 }
