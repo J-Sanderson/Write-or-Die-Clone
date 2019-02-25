@@ -50,9 +50,15 @@ document.addEventListener("DOMContentLoaded", function() {
         time -= 1;
         //is the time up?
         if (time < 0) {
+          //set time out
           document.getElementById("time-remaining").innerHTML = "00:00";
+          //hide/show things
           document.getElementById("timeup-screen").classList.remove("hidden");
           document.getElementById("overlay").classList.remove("hidden");
+          document.getElementById("restart").classList.remove("hidden");
+          document.getElementById("pause").classList.add("hidden");
+          document.getElementById("livetext").removeAttribute("class");
+          document.getElementById("livetext").classList.add("warning-none");
           //running status off
           running = false;
           clearInterval(secondCheck);
@@ -168,6 +174,22 @@ document.addEventListener("DOMContentLoaded", function() {
       document.getElementById("pause").classList.add("inactive");
     }
   });
+  
+  //restart
+  document.getElementById("restart").addEventListener("click", function() {
+    if (confirm("This will wipe your work and return you to the start screen! If you haven't saved your words yet, do it now!")) {
+      //reset everything
+      document.getElementById("livetext").removeAttribute("class");
+      document.getElementById("livetext").classList.add("warning-none");
+      document.getElementById("time-remaining").innerHTML = "";
+      document.getElementById("livetext").value = "";
+      document.getElementById("restart").classList.add("hidden");
+      document.getElementById("pause").removeAttribute("class");
+      document.getElementById("start-screen").classList.remove("hidden");
+      document.getElementById("writing-screen").classList.add("hidden");
+    }
+  });
+  
 });
 
 //converts second count to a mm:ss string for display
